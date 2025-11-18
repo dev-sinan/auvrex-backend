@@ -31,11 +31,9 @@ app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes); 
-
 
 
 const PORT = process.env.PORT || 5000;
