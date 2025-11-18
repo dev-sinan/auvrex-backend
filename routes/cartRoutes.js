@@ -2,6 +2,7 @@ import express from "express";
 import {
   getCartItems,
   addOrUpdateCartItem,
+  decreaseCartItem,
   updateCartItem,
   deleteCartItem,
   clearCart,
@@ -9,11 +10,12 @@ import {
 
 const router = express.Router();
 
-//  Routes
+// Routes
 router.get("/", getCartItems);
 router.post("/", addOrUpdateCartItem);
-router.put("/:id", updateCartItem);
-router.delete("/:id", deleteCartItem);
+router.put("/decrease", decreaseCartItem); // 👈 new route for - button
+router.put("/update", updateCartItem);
+router.delete("/item", deleteCartItem);
 router.delete("/", clearCart);
 
 export default router;
